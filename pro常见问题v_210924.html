@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>pro常见问题</title>
+	<style type="text/css">
+		div[name="qBox"]{
+			border-width: 0px 0px 1px 0px;
+			border-style: solid;
+			border-radius: 2px;
+			border-color: #eee;
+		}
+		div[name="titleBox"] h2{
+			position: relative;
+			height: 42px;
+			font-size: 14px;
+			font-weight: unset;
+			line-height: 42px;
+			color: #333;
+			background-color: #FAFAFA;
+			cursor: pointer;
+			font-size: 14px;
+			overflow: hidden;
+			border-color: #eee;
+			margin: 0;
+			padding: 0 15px 0 15px;
+		}
+		div[name="contentBox"]{
+			padding: 10px 15px;
+			line-height: 1.6;
+			color: #666;
+			font-size: 14px;
+			border-width: 1px 0px 0px 0px;
+			border-style: solid;
+			border-color: #eee;
+			display: none;
+		}
+		div[name="contentBox"] p{
+			margin: 0;
+			padding: 0 15px 0 15px;
+		}
+		#bigBox{
+			border-width: 1px 1px 0px 1px;
+			border-style: solid;
+			border-radius: 2px;
+			border-color: #eee;
+			display: block;
+		}
+		.color-green{
+			color: #90EE90;
+		}
+		.color-red{
+			color: #FF6347;
+		}
+		span{
+			padding: 0px 5px 0px 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="bigBox">
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>pro里面的文件都有什么？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● <span class="color-red">pro根目录</span>存放菜单脚本</br>
+					● <span class="color-red">pro/common</span>存放pro脚本主要逻辑</br>
+					● <span class="color-red">pro/config</span>存放自定义配置</br>
+					● <span class="color-red">pro/lib</span>存放脚本模板参数和参数说明</br>
+					● <span class="color-red">pro/log</span>存放脚本执行日志</br>
+					● <span class="color-red">pro/module</span>存放脚本模板配置</br>
+					● <span class="color-red">pro/mouse</span>存放鼠标脚本文件
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>什么是菜单脚本？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					是指pro<span class="color-red">根目录</span>下的脚本，也是土拨鼠能直接读取到的脚本，例如：<span class="color-red">A阿尔福那酒店.lua</span>。这类脚本可以自己<span class="color-red">重命名</span>、<span class="color-red">修改配置</span>、<span class="color-red">切换目录</span>等
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>菜单脚本切换目录是什么意思，有什么用？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					菜单脚本能够存放在<span class="color-red">土拨鼠scripts目录</span>下的任何目录下，可以方便自定义一键读取一个目录下的所有菜单脚本，例如：</br>
+					● 在土拨鼠scripts目录下新建个<span class="color-red">超能任务</span>文件夹，在超能任务文件夹内存放pro下的所有<span class="color-red">[超能任务]菜单脚本</span>，这样在你想要找指定超能任务时能快速找到</br>
+					● 在土拨鼠scripts目录下新建个<span class="color-red">转点打的脚本</span>文件夹，在转点打的脚本文件夹内存放自定义的<span class="color-red">Z转点重置副本次数</span>、<span class="color-red">N扭曲的世界树-自改打1次</span>、<span class="color-red">G怪物树山山谷-自改打1次</span>等，这样使用土拨鼠<span class="color-red">一键添加目录下的所有LUA脚本</span>功能就能便捷添加需要打的所有LUA脚本</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>我想修改pro/module下的文件可以吗？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					不建议修改。更新时会更新pro/module下的文件，建议在此副本的<span class="color-red">菜单脚本</span>文件内修改
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[副本脚本]我想改变副本次数应该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.mapCount = 1</span></br>
+					其中1为执行副本的次数</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[副本脚本]我想实现到达副本某个地图就出去该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.endMapId = 12345</span></br>
+					其中12345为结束地图id</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[副本脚本]我想实现单次副本超过时间就结束脚本该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.overtime = 50</span></br>
+					其中50为达到50分钟后就结束脚本，单位分钟</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[副本脚本]我想修改副本门口等待的时间该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					方法一（单个修改）：</br>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.waitingTime = 20</span></br>
+					其中20为门口等待20秒，单位秒</br>
+					</br>
+					</br>
+					方法二（全部修改）：</br>
+					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：</br>
+					<span class="color-green">waitingTime = 20,</span></br>
+					其中20为副本门口等待20秒，单位秒</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[副本脚本]我想修改奖励房间开箱子的时间该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					方法一（单个修改）：</br>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.rewardRoomWaitingTime = 30</span></br>
+					其中30为奖励箱子开箱等待30秒，单位秒</br>
+					<span class="color-green">mod.rewardRoomOutTime = 30</span></br>
+					其中30为奖励箱子开箱后等待30秒出门，单位秒</br>
+					</br>
+					</br>
+					方法二（全部修改）：</br>
+					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：</br>
+					<span class="color-green">rewardRoomWaitingTime = 30,</span></br>
+					其中30为奖励箱子开箱等待30秒，单位秒</br>
+					<span class="color-green">rewardRoomOutTime = 30,</span></br>
+					其中30为奖励箱子开箱后等待30秒出门，单位秒</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[副本脚本]还有哪些参数配置可修改？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					方法一（单个修改）：</br>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改代码</br>
+					</br>
+					方法二（全部修改）：</br>
+					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改代码</br>
+					</br>
+					具体参数：</br>
+					● 脚本名称：</br>
+					单个修改：<span class="color-green">mod.scriptName = "蛇龙巢穴-我喜欢乱更名版"</span></br>
+					全部修改：<span class="color-green">scriptName = "蛇龙巢穴-我喜欢乱更名版",</span></br>
+					其中<span class="color-red">蛇龙巢穴-我喜欢乱更名版</span>为修改后的脚本名称</br>
+					</br>
+					● 日志记录：</br>
+					单个修改：<span class="color-green">mod.openLog = 1</span></br>
+					全部修改：<span class="color-green">openLog = 1,</span></br>
+					其中<span class="color-red">1</span>为开启<span class="color-red">0</span>为关闭</br>
+					</br>
+					更多高级参数配置请前往<span class="color-red">pro/lib</span>目录下参看
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[图鉴脚本]我想设置指定时间结束、倒计时结束、永远不结束脚本该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">fsm.doFieldScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-red">不限时模式</span>示例：</br>
+					<span class="color-green">mod.timeLimitType = 1</span></br>
+					</br>
+					<span class="color-red">倒计时模式</span>示例：</br>
+					<span class="color-green">mod.timeLimitType = 2</span></br>
+					<span class="color-green">mod.timeLimitData = 10</span></br>
+					其中10为倒计时10分钟后结束脚本，单位分钟</br>
+					</br>
+					<span class="color-red">到点模式</span>示例：</br>
+					<span class="color-green">mod.timeLimitType = 3</span></br>
+					<span class="color-green">mod.timeLimitData = {16,15}</span></br>
+					其中16为结束小时，15为结束分钟，总体表现为到16点15分结束脚本</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[超能脚本]我打超能任务很快想缩短执行时间该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">fsm.doFieldScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.timeLimitData = 10</span></br>
+					其中10为倒计时10分钟后结束脚本，单位分钟</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[通用脚本]我想实现BUFF换装该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">buff换装</span>文件，右键<span class="color-red">记事本</span>打开</br>
+					● 按照<span class="color-red">buff换装</span>文件内指示修改需要的配置</br>
+					</br>
+					方法一（单个修改）：</br>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.buffChangingOver = 1</span></br>
+					其中<span class="color-green">1</span>为开启<span class="color-green">0</span>为关闭</br>
+					</br>
+					方法二（全部修改）：</br>
+					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件或<span class="color-red">图鉴脚本全局配置</span>文件或<span class="color-red">超能脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：</br>
+					<span class="color-green">buffChangingOver = 1,</span></br>
+					其中<span class="color-red">1</span>为开启<span class="color-red">0</span>为关闭</br>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[通用脚本]我想自定义换装该如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green">mod.changingOver = "经验套+紫金"</span></br>
+					其中<span class="color-red">经验套+紫金</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2>[通用脚本]如何在脚本结束后切换指定装备？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入/修改以下代码：</br>
+					<span class="color-green"></br>
+					mod.onOtherEnd = function()</br>
+					&nbsp&nbsp&nbsp&nbspfunc.changingOver("攻击装")</br>
+					end</br>
+					</span></br>
+					其中<span class="color-red">攻击装</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	$("div[name=titleBox]").click(function(){
+		$(this).next("div[name=contentBox]").toggle()
+	})
+</script>
+</html>
