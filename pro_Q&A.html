@@ -38,8 +38,8 @@
 			border-color: #eee;
 			display: none;
 		}
-		div[name="contentBox"] p{
-			margin: 0;
+		p{
+			margin: 10px 0 10px 0;
 			padding: 0 15px 0 15px;
 		}
 		#bigBox{
@@ -57,6 +57,20 @@
 		}
 		span{
 			padding: 0px 5px 0px 5px;
+		}
+		.pre{
+			color: 	#90EE90;
+			padding: 0px 15px 0px 15px;
+			margin: 8px 15px 8px 15px;
+			background-color: #555;
+			font-weight: bold;
+		}
+		note{
+			margin: 0;
+			padding: 0 15px 0 15px;
+			font-size: 14px;
+			color: #999;
+			display: block;
 		}
 	</style>
 </head>
@@ -112,14 +126,39 @@
 		</div>
 		<div name="qBox">
 			<div name="titleBox">
+				<h2>如何获取地图id？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					方法一：
+					<p>
+						群文件
+					</p>
+				</p>
+				
+				<p>
+					方法二：
+				</p>
+				<p>
+					● 依此点击土拨鼠<span class="color-red">脚本</span>→<span class="color-red">数据拦截</span></br>
+					● 在空白处粘贴复制以下代码：
+					<pre class="pre">speak(getmapid())</pre>
+				</p>
+				<p>
+					● 点击右下方<span class="color-red">一键执行拦截</span>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
 				<h2>[副本脚本]我想改变副本次数应该如何设置？</h2>
 			</div>
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.mapCount = 1</span></br>
-					其中1为执行副本的次数</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.mapCount = 1</pre>
+					<note>其中1为执行副本的次数</note>
 				</p>
 			</div>
 		</div>
@@ -130,9 +169,9 @@
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.endMapId = 12345</span></br>
-					其中12345为结束地图id</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.endMapId = 12345</pre>
+					<note>其中12345为结束地图id</note>
 				</p>
 			</div>
 		</div>
@@ -143,9 +182,9 @@
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.overtime = 50</span></br>
-					其中50为达到50分钟后就结束脚本，单位分钟</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.overtime = 50</pre>
+					<note>其中50为达到50分钟后就结束脚本，单位分钟</note>
 				</p>
 			</div>
 		</div>
@@ -157,16 +196,16 @@
 				<p>
 					方法一（单个修改）：</br>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.waitingTime = 20</span></br>
-					其中20为门口等待20秒，单位秒</br>
-					</br>
-					</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.waitingTime = 20</pre>
+					<note>其中20为门口等待20秒，单位秒</note>
+				</p>
+				<p>
 					方法二（全部修改）：</br>
 					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
-					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：</br>
-					<span class="color-green">waitingTime = 20,</span></br>
-					其中20为副本门口等待20秒，单位秒</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：
+					<pre class="pre">waitingTime = 20,</pre>
+					<note>其中20为副本门口等待20秒，单位秒</note>
 				</p>
 			</div>
 		</div>
@@ -178,20 +217,20 @@
 				<p>
 					方法一（单个修改）：</br>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.rewardRoomWaitingTime = 30</span></br>
-					其中30为奖励箱子开箱等待30秒，单位秒</br>
-					<span class="color-green">mod.rewardRoomOutTime = 30</span></br>
-					其中30为奖励箱子开箱后等待30秒出门，单位秒</br>
-					</br>
-					</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.rewardRoomWaitingTime = 30</pre>
+					<note>其中30为奖励箱子开箱等待30秒，单位秒</note>
+					<pre class="pre">mod.rewardRoomOutTime = 30</pre>
+					<note>其中30为奖励箱子开箱后等待30秒出门，单位秒</note>
+				</p>
+				<p>
 					方法二（全部修改）：</br>
 					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
-					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：</br>
-					<span class="color-green">rewardRoomWaitingTime = 30,</span></br>
-					其中30为奖励箱子开箱等待30秒，单位秒</br>
-					<span class="color-green">rewardRoomOutTime = 30,</span></br>
-					其中30为奖励箱子开箱后等待30秒出门，单位秒</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：
+					<pre class="pre">rewardRoomWaitingTime = 30,</pre>
+					<note>其中30为奖励箱子开箱等待30秒，单位秒</note>
+					<pre class="pre">rewardRoomOutTime = 30,</pre>
+					<note>其中30为奖励箱子开箱后等待30秒出门，单位秒</note>
 				</p>
 			</div>
 		</div>
@@ -203,23 +242,30 @@
 				<p>
 					方法一（单个修改）：</br>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改代码</br>
-					</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改代码
+				</p>
+				<p>
 					方法二（全部修改）：</br>
 					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
-					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改代码</br>
-					</br>
-					具体参数：</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改代码
+				</p>
+				<p>
+					● 具体参数：
+				</p>
+				<p>
 					● 脚本名称：</br>
-					单个修改：<span class="color-green">mod.scriptName = "蛇龙巢穴-我喜欢乱更名版"</span></br>
-					全部修改：<span class="color-green">scriptName = "蛇龙巢穴-我喜欢乱更名版",</span></br>
-					其中<span class="color-red">蛇龙巢穴-我喜欢乱更名版</span>为修改后的脚本名称</br>
-					</br>
+					<pre class="pre">mod.scriptName = "蛇龙巢穴-我喜欢乱更名版"</pre>
+					<pre class="pre">scriptName = "蛇龙巢穴-我喜欢乱更名版",</pre>
+					<note>其中<span class="color-red">蛇龙巢穴-我喜欢乱更名版</span>为修改后的脚本名称</note>
+					<note>修改中文代码请注意<span class="color-red">编码</span>问题</note>
+				</p>
+				<p>
 					● 日志记录：</br>
-					单个修改：<span class="color-green">mod.openLog = 1</span></br>
-					全部修改：<span class="color-green">openLog = 1,</span></br>
-					其中<span class="color-red">1</span>为开启<span class="color-red">0</span>为关闭</br>
-					</br>
+					<pre class="pre">mod.openLog = 1</pre>
+					<pre class="pre">openLog = 1,</pre>
+					<note>其中<span class="color-red">1</span>为开启<span class="color-red">0</span>为关闭</note>
+				</p>
+				<p>
 					更多高级参数配置请前往<span class="color-red">pro/lib</span>目录下参看
 				</p>
 			</div>
@@ -231,19 +277,23 @@
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">fsm.doFieldScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-red">不限时模式</span>示例：</br>
-					<span class="color-green">mod.timeLimitType = 1</span></br>
-					</br>
-					<span class="color-red">倒计时模式</span>示例：</br>
-					<span class="color-green">mod.timeLimitType = 2</span></br>
-					<span class="color-green">mod.timeLimitData = 10</span></br>
-					其中10为倒计时10分钟后结束脚本，单位分钟</br>
-					</br>
-					<span class="color-red">到点模式</span>示例：</br>
-					<span class="color-green">mod.timeLimitType = 3</span></br>
-					<span class="color-green">mod.timeLimitData = {16,15}</span></br>
-					其中16为结束小时，15为结束分钟，总体表现为到16点15分结束脚本</br>
+					● 在最后一行代码<span class="color-red">fsm.doFieldScripts(mod)</span>之前加入或修改以下代码：
+				</p>
+				<p>
+					不限时模式示例：
+					<pre class="pre">mod.timeLimitType = 1</pre>
+				</p>
+				<p>
+					倒计时模式示例：
+					<pre class="pre">mod.timeLimitType = 2</pre>
+					<pre class="pre">mod.timeLimitData = 10</pre>
+					<note>其中10为倒计时10分钟后结束脚本，单位分钟</note>
+				</p>
+				<p>
+					到点模式示例：
+					<pre class="pre">mod.timeLimitType = 3</pre>
+					<pre class="pre">mod.timeLimitData = {16,15}</pre>
+					<note>其中16为结束小时，15为结束分钟，总体表现为到16点15分结束脚本</note>
 				</p>
 			</div>
 		</div>
@@ -254,9 +304,9 @@
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">fsm.doFieldScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.timeLimitData = 10</span></br>
-					其中10为倒计时10分钟后结束脚本，单位分钟</br>
+					● 在最后一行代码<span class="color-red">fsm.doFieldScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.timeLimitData = 10</pre>
+					<note>其中10为倒计时10分钟后结束脚本，单位分钟</note>
 				</p>
 			</div>
 		</div>
@@ -267,19 +317,22 @@
 			<div name="contentBox">
 				<p>
 					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">buff换装</span>文件，右键<span class="color-red">记事本</span>打开</br>
-					● 按照<span class="color-red">buff换装</span>文件内指示修改需要的配置</br>
-					</br>
+					● 按照<span class="color-red">buff换装</span>文件内指示修改需要的配置
+				</p>
+				<note>修改中文代码请注意<span class="color-red">编码</span>问题</note>
+				<p>
 					方法一（单个修改）：</br>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.buffChangingOver = 1</span></br>
-					其中<span class="color-green">1</span>为开启<span class="color-green">0</span>为关闭</br>
-					</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.buffChangingOver = 1</pre>
+					<note>其中<span class="color-red">1</span>为开启<span class="color-red">0</span>为关闭</note>
+				</p>
+				<p>
 					方法二（全部修改）：</br>
 					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件或<span class="color-red">图鉴脚本全局配置</span>文件或<span class="color-red">超能脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
-					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：</br>
-					<span class="color-green">buffChangingOver = 1,</span></br>
-					其中<span class="color-red">1</span>为开启<span class="color-red">0</span>为关闭</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：
+					<pre class="pre">buffChangingOver = 1,</pre>
+					<note>其中<span class="color-red">1</span>为开启<span class="color-red">0</span>为关闭</note>
 				</p>
 			</div>
 		</div>
@@ -290,9 +343,10 @@
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green">mod.changingOver = "经验套+紫金"</span></br>
-					其中<span class="color-red">经验套+紫金</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.changingOver = "经验套+紫金"</pre>
+					<note>其中<span class="color-red">经验套+紫金</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同</note>
+					<note>修改中文代码请注意<span class="color-red">编码</span>问题</note>
 				</p>
 			</div>
 		</div>
@@ -303,13 +357,13 @@
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：</br>
-					<span class="color-green"></br>
-					mod.onOtherEnd = function()</br>
-					&nbsp&nbsp&nbsp&nbspfunc.changingOver("攻击装")</br>
-					end</br>
-					</span></br>
-					其中<span class="color-red">攻击装</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">
+mod.onOtherEnd = function()
+	func.changingOver("攻击装")
+end</pre>
+					<note>其中<span class="color-red">攻击装</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同</note>
+					<note>修改中文代码请注意<span class="color-red">编码</span>问题</note>
 				</p>
 			</div>
 		</div>
