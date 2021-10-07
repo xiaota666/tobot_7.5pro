@@ -151,6 +151,49 @@
 		</div>
 		<div name="qBox">
 			<div name="titleBox">
+				<h2><span class="color-red">[new]</span>[副本脚本]我想新增物品记录怎么设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					方法一（单个修改）：</br>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">mod.itemRecordList = {"斗兽场 小型 体力 药水","斗兽场 小型 复合 药水"}</pre>
+					<note>其中"斗兽场 小型 体力 药水"、"斗兽场 小型 复合 药水"为需要监测的物品名称，可添加多个</note>
+				</p>
+				<p>
+					方法二（全部修改）：</br>
+					● 打开<span class="color-red">pro/config</span>目录下的<span class="color-red">副本脚本全局配置</span>文件，右键<span class="color-red">记事本</span>打开</br>
+					● 在第一行代码<span class="color-red">return {</span>和最后一行代码<span class="color-red">}</span>之间加入或修改以下代码：
+					<pre class="pre">itemRecordList = {"斗兽场 小型 体力 药水","斗兽场 小型 复合 药水"},</pre>
+					<note>其中"斗兽场 小型 体力 药水"、"斗兽场 小型 复合 药水"为需要监测的物品名称，可添加多个</note>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
+				<h2><span class="color-red">[new]</span>[通用脚本]最高权限配置是什么意思，如何设置？</h2>
+			</div>
+			<div name="contentBox">
+				<p>
+					用于全局配置下，单个脚本实现最高权限配置。例如：全局设置副本门口等待20秒，可以使用最高权限配置实现单个脚本门口等待10秒
+				</p>
+				<p>
+					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
+					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+					<pre class="pre">
+local rootMod = {}
+rootMod.mapCount = 5</pre>
+					<note>其中rootMod.mapCount为执行副本的次数，与mod.mapCount操作相似，多个其他配置也需要在最后一行代码之前，<span class="color-red">local rootMod = {}</span>之后加</note>
+				</p>
+				<p>
+					● 将最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>修改为以下代码：
+					<pre class="pre">dsm.doDungeonScripts(mod,rootMod)</pre>
+				</p>
+			</div>
+		</div>
+		<div name="qBox">
+			<div name="titleBox">
 				<h2>[副本脚本]我想改变副本次数应该如何设置？</h2>
 			</div>
 			<div name="contentBox">
