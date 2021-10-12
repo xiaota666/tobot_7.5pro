@@ -457,13 +457,19 @@ rootMod.mapCount = 5</pre>
 			<div name="contentBox">
 				<p>
 					● 选择你要修改的<span class="color-red">菜单脚本</span>文件右键<span class="color-red">记事本</span>打开</br>
-					● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
-					<pre class="pre">
+					<p>
+						● 在第一行代码<span class="color-red">check=1</span>之后加入以下代码：
+						<pre class="pre">local func = dofile(path_scripts .. "pro\\common\\func.lua")</pre>
+					</p>
+					<p>
+						● 在最后一行代码<span class="color-red">dsm.doDungeonScripts(mod)</span>之前加入或修改以下代码：
+						<pre class="pre">
 mod.onOtherEnd = function()
 	func.changingOver("攻击装")
 end</pre>
-					<note>其中<span class="color-red">攻击装</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同</note>
-					<note>修改中文代码请注意<span class="color-red">编码</span>问题</note>
+						<note>其中<span class="color-red">攻击装</span>为<span class="color-red">pro/config</span>目录下的文件，自定义时请确保<span class="color-red">文件名</span>和<span class="color-red">参数</span>相同</note>
+						<note>修改中文代码请注意<span class="color-red">编码</span>问题</note>
+					</p>
 				</p>
 			</div>
 		</div>
